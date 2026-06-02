@@ -543,59 +543,142 @@ footer a:hover { color: #fff; }
 }
 
 /* ====== RESPONSIVE ====== */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .grid-3, .grid-4 { grid-template-columns: repeat(2,1fr); gap: 20px; }
-  .hero .container { grid-template-columns: 1fr; gap: 40px; }
+  .grid-3, .grid-4 { grid-template-columns: repeat(2,1fr); gap: 18px; }
+  .hero .container { grid-template-columns: 1fr; gap: 0; }
 }
 
+/* Mobile Landscape / Small Tablet */
 @media (max-width: 768px) {
-  .container { padding: 0 20px; }
-  .menu-toggle { display: block; }
+  .container { padding: 0 24px; }
+
+  /* --- Nav --- */
+  .menu-toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; }
 
   nav ul {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 64px;
     left: 0;
     right: 0;
+    bottom: 0;
     background: var(--white);
-    padding: 8px 0;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    padding: 12px 24px;
+    z-index: 999;
+    overflow-y: auto;
   }
 
   nav ul.show { display: flex; }
-  nav ul li a { padding: 12px 20px; border-radius: 0; }
 
-  .hero { padding: 64px 20px; }
-  .hero h1 { font-size: 36px; }
-  .hero .container { grid-template-columns: 1fr; gap: 0; }
+  nav ul li a {
+    padding: 14px 0;
+    font-size: 16px;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+  }
 
+  nav ul li:last-child a { border-bottom: none; }
+
+  /* --- Hero --- */
+  .hero { padding: 48px 0 44px; }
+  .hero h1 { font-size: 30px; letter-spacing: -0.5px; }
+  .hero p { font-size: 14px; margin-bottom: 24px; }
+
+  /* --- Sections --- */
+  .section { padding: 48px 0; }
+  .section-bg { padding: 48px 0; }
+  .section-hd { margin-bottom: 36px; }
+  .section-hd h2 { font-size: 24px; }
+  .section-hd h2::after { width: 36px; height: 3px; margin-top: 10px; }
+
+  .page-banner { padding: 40px 24px; }
+  .page-banner h2 { font-size: 26px; }
+
+  /* --- Grids --- */
+  .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 14px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 14px; }
+
+  /* --- Cards --- */
+  .card { padding: 24px 20px; }
+  .card h4 { font-size: 15px; }
+
+  /* --- Stats --- */
   .stats-bar .container { grid-template-columns: repeat(2,1fr); }
+  .stat-cell { padding: 24px 12px; }
   .stat-cell:nth-child(2) { border-right: none; }
   .stat-cell:nth-child(1), .stat-cell:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .stat-num { font-size: 26px; }
+  .stat-lbl { font-size: 11px; }
 
-  .section { padding: 56px 0; }
-  .section-hd h2 { font-size: 28px; }
-  .page-banner h2 { font-size: 28px; }
+  /* --- News --- */
+  .news-item { padding: 20px; }
+  .news-item h4 { font-size: 14px; }
 
-  .grid-3, .grid-4, .contact-grid { grid-template-columns: 1fr; }
+  /* --- Partners --- */
+  .partner-item { padding: 10px 18px; font-size: 13px; }
 
-  .logo img { height: 38px; }
-  .logo-text h1 { font-size: 16px; }
+  /* --- Contact --- */
+  .contact-box { padding: 24px 20px; }
+  .info-row { flex-direction: column; gap: 2px; margin-bottom: 14px; }
+  .info-row .lb { min-width: auto; }
+
+  /* --- Table --- */
+  .data-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .data-table th, .data-table td { padding: 10px 12px; font-size: 13px; white-space: nowrap; }
+
+  /* --- Footer --- */
+  footer .grid-3 { grid-template-columns: 1fr; gap: 28px; }
+  footer { padding: 40px 0 20px; }
+
+  /* --- Buttons --- */
+  .hero-actions { flex-direction: row; }
+  .btn { padding: 12px 24px; font-size: 14px; }
+
+  /* --- Logo --- */
+  .logo img { height: 36px; }
+  .logo-text h1 { font-size: 15px; }
+  .logo-text span { font-size: 9px; }
+
+  /* --- Timeline --- */
+  .timeline { padding-left: 24px; }
+  .timeline-item { padding-left: 16px; margin-bottom: 24px; }
+  .timeline-item::before { left: -16px; width: 10px; height: 10px; }
 }
 
+/* Phone */
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
-  .hero { padding: 48px 16px; }
-  .hero h1 { font-size: 28px; }
-  .section { padding: 40px 0; }
-  .section-hd h2 { font-size: 24px; }
+
+  .hero { padding: 40px 0 36px; }
+  .hero h1 { font-size: 26px; }
+  .hero p { font-size: 13px; line-height: 1.8; padding: 0 4px; }
+
+  .section { padding: 36px 0; }
+  .section-bg { padding: 36px 0; }
+  .section-hd { margin-bottom: 28px; }
+  .section-hd h2 { font-size: 22px; }
+
+  .card { padding: 20px 16px; }
+
   .stats-bar .container { grid-template-columns: 1fr; }
-  .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 18px 12px; }
   .stat-cell:last-child { border-bottom: none; }
-  .hero-actions { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
+  .stat-num { font-size: 24px; }
+
+  .hero-actions { flex-direction: column; gap: 10px; }
+  .btn { width: 100%; justify-content: center; padding: 14px 24px; }
+
+  .news-item { padding: 18px 16px; }
+  .partner-item { padding: 8px 14px; font-size: 12px; }
+  .partner-grid { gap: 8px; }
+
+  .contact-box { padding: 20px 16px; }
+  .page-banner { padding: 32px 16px; }
+  .page-banner h2 { font-size: 24px; }
+  .page-banner p { font-size: 13px; }
+
+  .news-meta { flex-wrap: wrap; gap: 6px; }
 }
