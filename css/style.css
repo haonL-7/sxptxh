@@ -607,11 +607,9 @@ footer a:hover { color: #fff; }
 
   /* --- Stats --- */
   .stats-bar .container { grid-template-columns: repeat(2,1fr); }
-  .stat-cell { padding: 24px 12px; }
-  .stat-cell:nth-child(2) { border-right: none; }
-  .stat-cell:nth-child(1), .stat-cell:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .stat-num { font-size: 26px; }
-  .stat-lbl { font-size: 11px; }
+  .stat-cell { padding: 20px 6px; }
+  .stat-num { font-size: 20px; }
+  .stat-lbl { font-size: 10px; letter-spacing: 1px; }
 
   /* --- News --- */
   .news-item { padding: 20px; }
@@ -663,10 +661,10 @@ footer a:hover { color: #fff; }
 
   .card { padding: 20px 16px; }
 
-  .stats-bar .container { grid-template-columns: 1fr; }
-  .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 18px 12px; }
-  .stat-cell:last-child { border-bottom: none; }
-  .stat-num { font-size: 24px; }
+  .stats-bar .container { grid-template-columns: repeat(4,1fr); }
+  .stat-cell { padding: 16px 4px; }
+  .stat-num { font-size: 18px; }
+  .stat-lbl { font-size: 9px; letter-spacing: 0.5px; }
 
   .hero-actions { flex-direction: column; gap: 10px; }
   .btn { width: 100%; justify-content: center; padding: 14px 24px; }
