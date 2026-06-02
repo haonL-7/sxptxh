@@ -4,8 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>科普专区 — 陕西省体能协会</title>
-  <meta name="description" content="体能科普知识，涵盖运动保护、体能训练、运动提升等内容。">
+  <meta name="description" content="体能科普知识，涵盖体能训练、运动保护、运动提升等权威内容。">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .ref-link {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+    .ref-link:hover { text-decoration: underline; }
+    .src-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      background: var(--primary-lt);
+      color: var(--primary);
+      padding: 1px 8px;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--gray-100);
+      margin: 48px 0;
+    }
+    .external-links { margin-top: 24px; }
+    .external-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      transition: var(--t);
+    }
+    .external-links a:hover { border-color: var(--primary); }
+    .external-links a .title { font-weight: 600; font-size: 14px; color: var(--text); }
+    .external-links a .from { font-size: 11px; color: var(--gray-400); }
+  </style>
 </head>
 <body>
 
@@ -42,11 +82,11 @@
 
   <section class="page-banner">
     <h2>科普专区</h2>
-    <p>科学体能训练知识普及</p>
+    <p>科学体能训练知识普及 · 收录国内外权威机构专业资料</p>
   </section>
 
-  <!-- 体能训练 -->
-  <section class="section section-bg">
+  <!-- ========== 体能训练 ========== -->
+  <section class="section">
     <div class="container">
       <div class="section-hd">
         <h2>体能训练</h2>
@@ -54,36 +94,41 @@
       </div>
       <div class="news-list">
         <div class="news-item">
-          <div class="news-meta"><span>体能科普</span></div>
+          <div class="news-meta"><span>中国体能协会</span><span class="src-tag">CSCA</span></div>
           <h4>儿童与成人体能训练大不同，你真的了解吗？</h4>
           <p>儿童体能训练应以游戏化和多样化为主，注重基础运动技能的发展；成人体能训练则更侧重力量、耐力、柔韧等专项提升。两者在训练强度、恢复时间、动作选择上均有显著差异。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会 (strength.org.cn)</a>
         </div>
         <div class="news-item">
-          <div class="news-meta"><span>体能科普</span></div>
+          <div class="news-meta"><span>中国体能协会</span><span class="src-tag">CSCA</span></div>
           <h4>"营养补充"——提升体能的关键</h4>
           <p>合理的营养补充是体能训练的重要支撑。训练前补充碳水化合物提供能量，训练后补充蛋白质促进肌肉修复，日常注意维生素和矿物质的均衡摄入。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会 (strength.org.cn)</a>
         </div>
         <div class="news-item">
-          <div class="news-meta"><span>体能科普</span></div>
+          <div class="news-meta"><span>中国体能协会</span><span class="src-tag">CSCA</span></div>
           <h4>有氧运动 vs 无氧运动</h4>
           <p>有氧运动（如跑步、游泳）以脂肪和糖原有氧代谢供能，适合提升心肺耐力；无氧运动（如举重、短跑）以糖酵解供能为主，适合提升力量和爆发力。两者结合效果最佳。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会 (strength.org.cn)</a>
         </div>
         <div class="news-item">
-          <div class="news-meta"><span>体能科普</span></div>
-          <h4>科学的体能训练方法</h4>
+          <div class="news-meta"><span>中国体能协会</span><span class="src-tag">CSCA</span></div>
+          <h4>科学的体能训练方法 —— 遵循FITT原则</h4>
           <p>科学的体能训练应遵循FITT原则（频率、强度、时间、类型），循序渐进，个性化设计。训练前充分热身，训练后拉伸放松，合理安排休息恢复日。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会 (strength.org.cn)</a>
         </div>
         <div class="news-item">
-          <div class="news-meta"><span>体能科普</span></div>
-          <h4>探索运动系统的奥秘</h4>
-          <p>人体运动系统由骨骼、关节和肌肉三大部分组成。骨骼提供支撑，关节决定活动范围，肌肉产生动力。了解运动系统的结构与功能，是科学训练的基础。</p>
+          <div class="news-meta"><span>国家体育总局</span><span class="src-tag">官方</span></div>
+          <h4>如何科学开展体能训练？</h4>
+          <p>武汉体育学院教授柳鸣毅指出：体能训练首先要遵循青少年成长规律；其次要注重处理好运动强度和恢复之间的关系；此外要注重体能训练与专项相结合。</p>
+          <a class="ref-link" href="https://www.sport.gov.cn/n20001280/n20067626/n20067861/c25832988/content.html" target="_blank">来源：国家体育总局 · 中国体育报</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 运动保护 -->
-  <section class="section">
+  <!-- ========== 运动保护 ========== -->
+  <section class="section section-bg">
     <div class="container">
       <div class="section-hd">
         <h2>运动保护</h2>
@@ -93,21 +138,24 @@
         <div class="card">
           <h4>运动前热身：机制与策略</h4>
           <p>动态热身可提高肌肉温度、激活神经系统、增加关节活动度，有效降低运动损伤风险。推荐5-10分钟的动态拉伸结合低强度有氧活动。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会</a>
         </div>
         <div class="card">
           <h4>运动后禁忌事项</h4>
           <p>运动后应避免立即停止、大量饮水、冷水浴等行为。正确的整理运动应包括慢走过渡、静态拉伸、补充水分和营养。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会</a>
         </div>
         <div class="card">
           <h4>骨关节炎的最佳运动模式</h4>
           <p>适度的低冲击有氧运动（如游泳、骑自行车）结合力量训练，可有效缓解骨关节炎症状，改善关节功能，提高生活质量。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 运动提升 -->
-  <section class="section section-bg">
+  <!-- ========== 运动提升 ========== -->
+  <section class="section">
     <div class="container">
       <div class="section-hd">
         <h2>运动提升</h2>
@@ -117,15 +165,54 @@
         <div class="card">
           <h4>如何提升有氧耐力？</h4>
           <p>有氧耐力的提升需要持续规律的训练，建议每周3-5次，每次30-60分钟的中等强度有氧运动。渐进增加训练量和强度是关键。</p>
+          <a class="ref-link" href="https://www.tineng.org.cn/" target="_blank">来源：中国体能网</a>
         </div>
         <div class="card">
           <h4>冥想训练对运动的积极影响</h4>
           <p>冥想训练有助于提升运动专注力、降低赛前焦虑、改善反应时。每天10-15分钟的正念冥想可作为训练的辅助手段。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会</a>
         </div>
         <div class="card">
           <h4>运动对人体健康的促进作用</h4>
           <p>规律运动可增强心肺功能、改善代谢健康、强化骨骼肌肉、调节心理状态、延缓衰老过程。每周150分钟中等强度运动是基本推荐量。</p>
+          <a class="ref-link" href="https://www.strength.org.cn/" target="_blank">来源：中国体能协会</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 推荐外部资源 ========== -->
+  <section class="section section-bg">
+    <div class="container">
+      <div class="section-hd">
+        <h2>推荐外部资源</h2>
+        <p>国内外权威体能机构官方网站链接</p>
+      </div>
+      <div style="max-width: 700px; margin: 0 auto;" class="external-links">
+        <a href="https://www.strength.org.cn/" target="_blank">
+          <span class="title">中国体能协会 (CSCA) — 科普专区</span>
+          <span class="from">strength.org.cn</span>
+        </a>
+        <a href="https://www.nsca.com/" target="_blank">
+          <span class="title">美国国家体能协会 (NSCA) — 全球权威体能机构</span>
+          <span class="from">nsca.com</span>
+        </a>
+        <a href="https://www.nsca-shanghai.com.cn/" target="_blank">
+          <span class="title">美国国家体能协会 (上海) — 中文认证与培训</span>
+          <span class="from">nsca-shanghai.com.cn</span>
+        </a>
+        <a href="https://www.tineng.org.cn/" target="_blank">
+          <span class="title">中国体能网 — 体能训练专业知识</span>
+          <span class="from">tineng.org.cn</span>
+        </a>
+        <a href="https://www.sport.gov.cn/" target="_blank">
+          <span class="title">国家体育总局 — 政策法规与科学锻炼指导</span>
+          <span class="from">sport.gov.cn</span>
+        </a>
+        <a href="https://www.nsca.com/about/position-statements/" target="_blank">
+          <span class="title">NSCA Position Statements — 权威立场声明</span>
+          <span class="from">nsca.com</span>
+        </a>
       </div>
     </div>
   </section>
@@ -156,7 +243,7 @@
     </div>
     <div class="container">
       <div class="footer-btm">
-        <p>&copy; 2025 陕西省体能协会 &middot; 数据来源于公开资料整理</p>
+        <p>&copy; 2025 陕西省体能协会 &middot; 本页科普内容综合整理自中国体能协会、国家体育总局、NSCA等公开资料。</p>
       </div>
     </div>
   </footer>
