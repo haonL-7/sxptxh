@@ -144,13 +144,10 @@ nav ul li a.active { color: var(--coral); font-weight: 700; background: var(--co
   grid-template-columns: 1fr;
   gap: 0;
   align-items: center;
-  text-align: center;
-  max-width: 720px;
+  text-align: left;
 }
 
-.hero-actions { justify-content: center; }
-
-.hero p { margin-left: auto; margin-right: auto; }
+.hero-actions { justify-content: flex-start; }
 
 .hero-left { }
 
