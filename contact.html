@@ -9,28 +9,28 @@
 </head>
 <body>
 
-  <!-- 顶部信息栏 -->
+  <!-- ======== 顶部信息栏 ======== -->
   <div class="top-bar">
     <div class="container">
       <span>欢迎访问陕西省体能协会</span>
       <div>
-        <a href="mailto:info@sxptxh.com">info@sxptxh.com</a>
+        <a href="mailto:info@sxptxh.com">📧 info@sxptxh.com</a>
         <a href="contact.html">联系我们</a>
       </div>
     </div>
   </div>
 
-  <!-- 导航栏 -->
+  <!-- ======== 导航栏 ======== -->
   <header>
     <div class="container">
       <div class="logo">
-        <div class="logo-icon">陕体</div>
+        <img src="images/logo.jpg" alt="陕西省体能协会">
         <div class="logo-text">
           <h1>陕西省体能协会</h1>
-          <span>SHAANXI PHYSICAL FITNESS ASSOCIATION</span>
+          <span>Shaanxi Physical Fitness Association</span>
         </div>
       </div>
-      <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</button>
+      <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')" aria-label="菜单">☰</button>
       <nav>
         <ul>
           <li><a href="index.html">首页</a></li>
@@ -43,67 +43,68 @@
     </div>
   </header>
 
-  <!-- 页面横幅 -->
+  <!-- ======== 页面横幅 ======== -->
   <section class="page-banner">
-    <h2>联系我们</h2>
-    <p>欢迎与陕西省体能协会取得联系</p>
+    <div class="container">
+      <h2>联系我们</h2>
+      <p>欢迎与陕西省体能协会取得联系</p>
+    </div>
   </section>
 
-  <!-- 联系方式 -->
-  <section class="section" style="background: var(--bg-white);">
+  <!-- ======== 联系方式 ======== -->
+  <section class="section section-alt">
     <div class="container">
       <div class="contact-grid">
-        <div class="contact-info">
+        <div class="contact-card">
           <h4>协会信息</h4>
-          <div class="info-item">
+          <div class="info-row">
             <div class="info-icon">📍</div>
-            <div class="info-text">
-              <strong>办公地址</strong><br>
-              西安市西安科技大学临潼校区<br>
-              骊山校园体育馆302室
+            <div class="info-content">
+              <strong>办公地址</strong>
+              西安科技大学临潼校区<br>骊山校园体育馆302室
             </div>
           </div>
-          <div class="info-item">
+          <div class="info-row">
             <div class="info-icon">📧</div>
-            <div class="info-text">
-              <strong>电子邮箱</strong><br>
+            <div class="info-content">
+              <strong>电子邮箱</strong>
               info@sxptxh.com
             </div>
           </div>
-          <div class="info-item">
+          <div class="info-row">
             <div class="info-icon">📋</div>
-            <div class="info-text">
-              <strong>统一社会信用代码</strong><br>
+            <div class="info-content">
+              <strong>统一社会信用代码</strong>
               51610000MJY52792XF
             </div>
           </div>
-          <div class="info-item">
+          <div class="info-row">
             <div class="info-icon">🏛️</div>
-            <div class="info-text">
-              <strong>登记机关</strong><br>
+            <div class="info-content">
+              <strong>登记机关</strong>
               陕西省民政厅
             </div>
           </div>
-          <div class="info-item">
+          <div class="info-row">
             <div class="info-icon">📅</div>
-            <div class="info-text">
-              <strong>成立日期</strong><br>
+            <div class="info-content">
+              <strong>成立日期</strong>
               2020年9月3日
             </div>
           </div>
         </div>
 
-        <div>
-          <h4 style="font-size: 18px; color: var(--primary); margin-bottom: 20px;">地图位置</h4>
-          <div style="background: var(--bg-light); border-radius: var(--radius); padding: 30px; text-align: center; border: 1px solid var(--border);">
-            <div style="font-size: 48px; margin-bottom: 15px;">📍</div>
-            <p style="color: var(--text-muted); font-size: 14px;">
-              <strong>西安科技大学临潼校区</strong><br>
+        <div class="contact-card">
+          <h4>地图位置</h4>
+          <div style="background: var(--bg); border-radius: var(--radius); padding: 32px; text-align: center;">
+            <div style="font-size: 48px; margin-bottom: 16px;">📍</div>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.8;">
+              <strong style="color: var(--text);">西安科技大学临潼校区</strong><br>
               陕西省西安市临潼区陕鼓大道48号<br>
               骊山校园体育馆302室
             </p>
-            <p style="margin-top: 12px;">
-              <a href="https://map.baidu.com/search/%E8%A5%BF%E5%AE%89%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E4%B8%B4%E6%BD%BC%E6%A0%A1%E5%8C%BA" target="_blank" style="display: inline-block; padding: 8px 20px; background: var(--primary); color: white; border-radius: 6px; font-size: 13px;">查看百度地图 →</a>
+            <p style="margin-top: 16px;">
+              <a href="https://map.baidu.com/search/%E8%A5%BF%E5%AE%89%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E4%B8%B4%E6%BD%BC%E6%A0%A1%E5%8C%BA" target="_blank" class="btn btn-primary" style="padding: 10px 24px; font-size: 13px;">查看百度地图 →</a>
             </p>
           </div>
         </div>
@@ -111,25 +112,26 @@
     </div>
   </section>
 
-  <!-- 入会与合作 -->
+  <!-- ======== 加入我们 ======== -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
+      <div class="section-header">
+        <div class="label">Join Us</div>
         <h3>加入我们</h3>
         <p>诚邀各高校、中小学、体育培训机构及体能从业者加入</p>
       </div>
-      <div style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 15px; color: var(--text-muted); line-height: 2;">
+      <div style="max-width: 640px; margin: 0 auto; text-align: center; font-size: 15px; color: var(--text-muted); line-height: 2;">
         <p>陕西省体能协会面向全省招募单位会员和个人会员。协会会员来源广泛，涵盖专业研究者、行业从业者和相关行业实践者。会员入会后可参加协会组织的各项活动，享受专业培训、学术交流、赛事参与等服务。</p>
         <p style="margin-top: 12px;">有意加入者请通过邮箱联系我们，获取入会申请表及详细信息。</p>
-        <p style="margin-top: 20px;">
-          <a href="mailto:info@sxptxh.com" style="display: inline-block; padding: 14px 36px; background: var(--primary); color: white; border-radius: 50px; font-size: 16px; font-weight: 600;">发送邮件 →</a>
+        <p style="margin-top: 24px;">
+          <a href="mailto:info@sxptxh.com" class="btn btn-primary">发送邮件 →</a>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 数据来源 -->
-  <section class="section" style="background: var(--bg-light); padding: 30px 0;">
+  <!-- ======== 数据来源 ======== -->
+  <section class="section" style="background: var(--bg); padding: 28px 0;">
     <div class="container">
       <p style="text-align: center; font-size: 13px; color: var(--text-muted);">
         📝 本网站信息来源于公开资料整理，如有变动请以官方最新公告为准。<br>
@@ -138,7 +140,7 @@
     </div>
   </section>
 
-  <!-- 页脚 -->
+  <!-- ======== 页脚 ======== -->
   <footer>
     <div class="container">
       <div class="grid-3">
@@ -157,10 +159,12 @@
         </div>
         <div>
           <h4>联系方式</h4>
-          <p>📌 西安市西安科技大学临潼校区<br>骊山校园体育馆302室</p>
+          <p>📍 西安科技大学临潼校区<br>骊山校园体育馆302室</p>
           <p>📧 info@sxptxh.com</p>
         </div>
       </div>
+    </div>
+    <div class="container">
       <div class="footer-bottom">
         <p>&copy; 2025 陕西省体能协会 · 本网站为公益信息展示 · 数据来源：公开资料整理</p>
       </div>

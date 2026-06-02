@@ -9,28 +9,28 @@
 </head>
 <body>
 
-  <!-- 顶部信息栏 -->
+  <!-- ======== 顶部信息栏 ======== -->
   <div class="top-bar">
     <div class="container">
       <span>欢迎访问陕西省体能协会</span>
       <div>
-        <a href="mailto:info@sxptxh.com">info@sxptxh.com</a>
+        <a href="mailto:info@sxptxh.com">📧 info@sxptxh.com</a>
         <a href="contact.html">联系我们</a>
       </div>
     </div>
   </div>
 
-  <!-- 导航栏 -->
+  <!-- ======== 导航栏 ======== -->
   <header>
     <div class="container">
       <div class="logo">
-        <div class="logo-icon">陕体</div>
+        <img src="images/logo.jpg" alt="陕西省体能协会">
         <div class="logo-text">
           <h1>陕西省体能协会</h1>
-          <span>SHAANXI PHYSICAL FITNESS ASSOCIATION</span>
+          <span>Shaanxi Physical Fitness Association</span>
         </div>
       </div>
-      <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">☰</button>
+      <button class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')" aria-label="菜单">☰</button>
       <nav>
         <ul>
           <li><a href="index.html">首页</a></li>
@@ -43,30 +43,34 @@
     </div>
   </header>
 
-  <!-- 页面横幅 -->
+  <!-- ======== 页面横幅 ======== -->
   <section class="page-banner">
-    <h2>关于协会</h2>
-    <p>了解陕西省体能协会的成立背景、宗旨与使命</p>
+    <div class="container">
+      <h2>关于协会</h2>
+      <p>了解陕西省体能协会的成立背景、宗旨与使命</p>
+    </div>
   </section>
 
-  <!-- 成立背景 -->
-  <section class="section" style="background: var(--bg-white);">
+  <!-- ======== 成立背景 ======== -->
+  <section class="section section-alt">
     <div class="container">
-      <div class="section-title">
+      <div class="section-header">
+        <div class="label">Background</div>
         <h3>成立背景</h3>
       </div>
-      <div style="max-width: 850px; margin: 0 auto; font-size: 15px; color: var(--text-muted); line-height: 2;">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 15px; color: var(--text-muted); line-height: 2.2;">
         <p>为落实全民健身国家战略，不断提升人民健康水平，助力第十四届全运会，陕西省体能协会于<strong>2020年10月1日</strong>在西安正式创立，这是<strong>国内较早成立的省级体能协会</strong>之一。</p>
-        <p style="margin-top: 15px;">协会的成立得到了陕西省体育局、陕西省民政厅和陕西省社会组织管理局的大力支持，西安科技大学、陕西师范大学等高校也积极参与筹备。国内、省内著名体能训练和研究专家也积极参与其中，协会会员来源广泛，涵盖专业研究者、行业从业者和相关行业实践者。</p>
-        <p style="margin-top: 15px;">协会经陕西省民政厅批准，于<strong>2020年9月3日</strong>正式登记成立，统一社会信用代码：51610000MJY52792XF。</p>
+        <p style="margin-top: 16px;">协会的成立得到了陕西省体育局、陕西省民政厅和陕西省社会组织管理局的大力支持，西安科技大学、陕西师范大学等高校也积极参与筹备。国内、省内著名体能训练和研究专家也积极参与其中，协会会员来源广泛，涵盖专业研究者、行业从业者和相关行业实践者。</p>
+        <p style="margin-top: 16px;">协会经陕西省民政厅批准，于<strong>2020年9月3日</strong>正式登记成立，统一社会信用代码：<strong>51610000MJY52792XF</strong>。</p>
       </div>
     </div>
   </section>
 
-  <!-- 宗旨与使命 -->
+  <!-- ======== 宗旨与使命 ======== -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
+      <div class="section-header">
+        <div class="label">Mission</div>
         <h3>宗旨与使命</h3>
       </div>
       <div class="grid-3">
@@ -89,14 +93,14 @@
     </div>
   </section>
 
-  <!-- 发展历程 -->
-  <section class="section" style="background: var(--bg-white);">
+  <!-- ======== 发展历程 ======== -->
+  <section class="section section-alt">
     <div class="container">
-      <div class="section-title">
+      <div class="section-header">
+        <div class="label">Timeline</div>
         <h3>发展历程</h3>
       </div>
-      <div style="max-width: 600px; margin: 0 auto;">
-        <div class="timeline">
+      <div class="timeline">
           <div class="timeline-item">
             <div class="year">2020年9月</div>
             <p>陕西省民政厅批准登记成立，法定代表人岳海侠</p>
@@ -126,45 +130,50 @@
     </div>
   </section>
 
-  <!-- 协会领导 -->
+  <!-- ======== 协会领导 ======== -->
   <section class="section">
     <div class="container">
-      <div class="section-title">
+      <div class="section-header">
+        <div class="label">Leadership</div>
         <h3>协会领导</h3>
       </div>
-      <div style="max-width: 600px; margin: 0 auto;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
-          <tr style="border-bottom: 2px solid var(--border);">
-            <th style="padding: 12px 15px; text-align: left; color: var(--primary);">职务</th>
-            <th style="padding: 12px 15px; text-align: left; color: var(--primary);">姓名</th>
-            <th style="padding: 12px 15px; text-align: left; color: var(--primary);">简介</th>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 15px; font-weight: 600;">会长</td>
-            <td style="padding: 15px;">岳海侠</td>
-            <td style="padding: 15px; color: var(--text-muted);">西安科技大学副教授，创会会长</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 15px; font-weight: 600;">副会长</td>
-            <td style="padding: 15px;">李小涛</td>
-            <td style="padding: 15px; color: var(--text-muted);">陕西省体能协会副会长</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 15px; font-weight: 600;">授课专家</td>
-            <td style="padding: 15px;">黄文林</td>
-            <td style="padding: 15px; color: var(--text-muted);">西安市第85中学正高级体育教师、国家级田径裁判员</td>
-          </tr>
-          <tr>
-            <td style="padding: 15px; font-weight: 600;">授课专家</td>
-            <td style="padding: 15px;">李山</td>
-            <td style="padding: 15px; color: var(--text-muted);">西安体育学院教授、博士研究生导师</td>
-          </tr>
+      <div style="max-width: 640px; margin: 0 auto; overflow-x: auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>职务</th>
+              <th>姓名</th>
+              <th>简介</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>会长</strong></td>
+              <td>岳海侠</td>
+              <td style="color: var(--text-muted);">西安科技大学副教授，创会会长</td>
+            </tr>
+            <tr>
+              <td><strong>副会长</strong></td>
+              <td>李小涛</td>
+              <td style="color: var(--text-muted);">陕西省体能协会副会长</td>
+            </tr>
+            <tr>
+              <td><strong>授课专家</strong></td>
+              <td>黄文林</td>
+              <td style="color: var(--text-muted);">西安市第85中学正高级体育教师、国家级田径裁判员</td>
+            </tr>
+            <tr>
+              <td><strong>授课专家</strong></td>
+              <td>李山</td>
+              <td style="color: var(--text-muted);">西安体育学院教授、博士研究生导师</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- 页脚 -->
+  <!-- ======== 页脚 ======== -->
   <footer>
     <div class="container">
       <div class="grid-3">
@@ -183,10 +192,12 @@
         </div>
         <div>
           <h4>联系方式</h4>
-          <p>📌 西安市西安科技大学临潼校区<br>骊山校园体育馆302室</p>
+          <p>📍 西安科技大学临潼校区<br>骊山校园体育馆302室</p>
           <p>📧 info@sxptxh.com</p>
         </div>
       </div>
+    </div>
+    <div class="container">
       <div class="footer-bottom">
         <p>&copy; 2025 陕西省体能协会 · 本网站为公益信息展示 · 数据来源：公开资料整理</p>
       </div>
