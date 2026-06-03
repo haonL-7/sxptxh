@@ -460,6 +460,92 @@ nav ul li a.active { color: var(--coral); font-weight: 700; background: var(--co
 .info-row .lb { min-width:80px; font-weight:600; color:var(--ink); }
 .info-row .vl { color:var(--ink-lt); }
 
+/* ====== LEADER CARDS ====== */
+.leader-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.leader-card {
+  display: flex;
+  gap: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+  transition: var(--t);
+}
+
+.leader-card:hover {
+  border-color: var(--coral);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.leader-avatar {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--coral), var(--coral-dk));
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.leader-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.leader-role {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--coral);
+  background: var(--coral-lt);
+  padding: 2px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.leader-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 4px 0 2px;
+}
+
+.leader-affil {
+  font-size: 13px;
+  color: var(--coral);
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.leader-bio {
+  font-size: 13px;
+  color: var(--ink-lt);
+  line-height: 1.85;
+}
+
+.leader-src {
+  display: inline-block;
+  font-size: 11px;
+  color: var(--ink-dim);
+  margin-top: 6px;
+  border-top: 1px dashed var(--line);
+  padding-top: 6px;
+}
+
 /* ====== TABLE ====== */
 .data-table { width:100%; border-collapse:collapse; font-size:14px; }
 .data-table th { background:var(--ink); color:#fff; padding:12px 18px; font-weight:600; text-align:left; font-size:14px; }
@@ -545,6 +631,7 @@ footer a:hover { color: #fff; }
 @media (max-width: 1024px) {
   .grid-3, .grid-4 { grid-template-columns: repeat(2,1fr); gap: 18px; }
   .hero .container { grid-template-columns: 1fr; gap: 0; }
+  .leader-grid { grid-template-columns: 1fr; gap: 16px; }
 }
 
 /* Mobile Landscape / Small Tablet */
@@ -676,4 +763,8 @@ footer a:hover { color: #fff; }
   .page-banner p { font-size: 13px; }
 
   .news-meta { flex-wrap: wrap; gap: 6px; }
+
+  .leader-card { flex-direction: column; gap: 14px; padding: 20px 16px; }
+  .leader-avatar { width: 48px; height: 48px; font-size: 18px; }
+  .leader-info h3 { font-size: 16px; }
 }
