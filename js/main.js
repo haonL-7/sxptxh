@@ -145,6 +145,28 @@
     });
   }
 
+  // ── Nav Scroll Shadow ───────────────────────
+  function initNavScrollShadow() {
+    const header = document.querySelector('header');
+    if (!header) return;
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+    // initial check
+    if (window.scrollY > 10) header.classList.add('scrolled');
+  }
+
   // ── Smooth Nav Scroll (sticky header offset) ──
   function initSmoothScroll() {
     document.addEventListener('click', function (e) {
@@ -166,6 +188,7 @@
     initCardGlow();
     initButtonRipple();
     initHeroParallax();
+    initNavScrollShadow();
     initSmoothScroll();
   }
 
