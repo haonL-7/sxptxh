@@ -9,7 +9,7 @@
   // ── Scroll Reveal ──────────────────────────
   function initScrollReveal() {
     const revealEls = document.querySelectorAll(
-      '.card, .news-item, .timeline-item, .leader-card, .partner-item, .contact-box, .section-hd'
+      '.card, .news-item, .timeline-item, .leader-card, .partner-item, .contact-box, .section-hd, .stat-cell, .external-links a'
     );
     if (!revealEls.length) return;
 
@@ -22,7 +22,7 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: '0px 0px -30px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
     );
 
     revealEls.forEach((el) => observer.observe(el));
@@ -45,7 +45,7 @@
     }
 
     function animate(el, target) {
-      const duration = 1600;
+      const duration = 1800;
       const start = performance.now();
 
       function tick(now) {
@@ -76,11 +76,10 @@
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.5 }
     );
 
     statNums.forEach((el) => {
-      // store original
       el.dataset.original = el.textContent.trim();
       observer.observe(el);
     });
@@ -142,11 +141,10 @@
         ticking = true;
       }
     }, { passive: true });
-    // initial check
     if (window.scrollY > 10) header.classList.add('scrolled');
   }
 
-  // ── Smooth Nav Scroll (sticky header offset) ──
+  // ── Smooth Nav Scroll ──────────────────────
   function initSmoothScroll() {
     document.addEventListener('click', function (e) {
       const link = e.target.closest('a[href^="#"]');
@@ -160,6 +158,50 @@
     });
   }
 
+  // ── Mobile Menu Close on Nav Click ─────────
+  function initMobileMenuClose() {
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('nav ul li a');
+      if (!link) return;
+      const nav = document.querySelector('nav ul');
+      if (nav && nav.classList.contains('show')) {
+        nav.classList.remove('show');
+      }
+    });
+  }
+
+  // ── Counter Shimmer (subtle entrance) ──────
+  function initStatEntrance() {
+    const statCells = document.querySelectorAll('.stat-cell');
+    statCells.forEach((cell, i) => {
+      cell.style.transitionDelay = (i * 0.08) + 's';
+    });
+  }
+
+  // ── Scroll-triggered section header line animation ──
+  function initSectionDividerReveal() {
+    const dividers = document.querySelectorAll('.section-divider');
+    dividers.forEach((div) => {
+      div.style.transform = 'scaleX(0)';
+      div.style.transformOrigin = 'left';
+      div.style.transition = 'transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1)';
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.transform = 'scaleX(1)';
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    dividers.forEach((div) => observer.observe(div));
+  }
+
   // ── Boot ───────────────────────────────────
   function boot() {
     initScrollReveal();
@@ -168,6 +210,9 @@
     initHeroParallax();
     initNavScrollShadow();
     initSmoothScroll();
+    initMobileMenuClose();
+    initStatEntrance();
+    initSectionDividerReveal();
   }
 
   if (document.readyState === 'loading') {
