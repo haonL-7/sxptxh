@@ -40,8 +40,8 @@
       return m ? parseInt(m[1], 10) : null;
     }
 
-    function easeOutCubic(t) {
-      return 1 - Math.pow(1 - t, 3);
+    function easeOutExpo(t) {
+      return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
     }
 
     function animate(el, target) {
@@ -51,7 +51,7 @@
       function tick(now) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
-        const eased = easeOutCubic(progress);
+        const eased = easeOutExpo(progress);
         const current = Math.round(target * eased);
         el.textContent = current + '+';
         if (progress < 1) {
