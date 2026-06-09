@@ -5,39 +5,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
 
 :root {
-  /* ── Binance DESIGN.md palette ── */
+  /* ── Linear × Vercel × Binance fusion ── */
+
+  /* Brand accent — Binance warm yellow */
   --yellow:          #FCD535;
   --yellow-active:   #F0B90B;
   --yellow-lt:       #FFF8D6;
-  --canvas-dark:     #0B0E11;
-  --surface-dark:    #1E2329;
-  --surface-elevated:#2B3139;
-  --hairline-dark:   #2B3139;
-  --body-dark:       #EAECEF;
-  --muted:           #707A8A;
-  --muted-strong:    #929AA5;
-  --white:           #FFFFFF;
-  --line:            #EAECEF;
-  --bg:              #FAFAFA;
   --on-primary:      #181A20;
 
-  /* Legacy aliases for backward compat */
+  /* Dark canvas — Linear-grade depth */
+  --canvas-dark:     #08090A;
+  --surface-dark:    #0F1011;
+  --surface-elevated:#191A1B;
+
+  /* Light surfaces */
+  --white:           #FFFFFF;
+  --bg:              #FAFAFA;
+  --line:            #EBEBEB;
+
+  /* Text on dark — Linear's non-pure-white system */
+  --text-primary:    #F7F8F8;
+  --text-secondary:  #D0D6E0;
+  --text-muted:      #8A8F98;
+  --text-subtle:     #62666D;
+
+  /* Text on light — Vercel's gray scale */
+  --ink:             #171717;
+  --ink-secondary:   #4D4D4D;
+  --ink-muted:       #808080;
+
+  /* Borders */
+  --hairline-white:  rgba(255,255,255,0.08);
+  --hairline-subtle: rgba(255,255,255,0.05);
+  --border-light:    rgba(0,0,0,0.08);
+
+  /* Shadows — Vercel-style layered */
+  --shadow-border:   0 0 0 1px rgba(0,0,0,0.08);
+  --shadow-card:     0 0 0 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.04);
+  --shadow-card-lg:  0 0 0 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.04), 0 8px 8px -8px rgba(0,0,0,0.04);
+  --shadow-sm:       0 1px 2px rgba(0,0,0,0.04);
+
+  /* Legacy aliases */
   --carbon:    var(--surface-dark);
   --black:     var(--canvas-dark);
-  --gray:      var(--muted);
-  --gray-lt:   var(--muted-strong);
+  --gray:      var(--text-muted);
+  --gray-lt:   var(--text-secondary);
   --yellow-dk: var(--yellow-active);
   --carbon-lt: var(--surface-elevated);
+  --body-dark: var(--text-primary);
+  --muted:     var(--text-muted);
+  --muted-strong: var(--text-secondary);
   --t:         all 0.3s ease;
 
   /* Typography */
   --font-display: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
-
-  /* Shadows — minimal, Binance-style flat elevation */
-  --shadow-sm:  0 1px 2px rgba(0,0,0,0.04);
-  --shadow:     0 2px 8px rgba(0,0,0,0.06);
-  --shadow-md:  0 4px 16px rgba(0,0,0,0.08);
-  --shadow-lg:  0 12px 40px rgba(0,0,0,0.12);
 
   /* Easing */
   --ease:       cubic-bezier(0.4, 0, 0.2, 1);
@@ -48,8 +69,8 @@
 html { scroll-behavior:smooth; }
 
 body {
-  font-family: 'Noto Sans SC', system-ui, sans-serif;
-  color: var(--carbon);
+  font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  color: var(--ink);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
 }
@@ -121,7 +142,7 @@ nav ul li a {
   padding: 7px 14px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--gray);
+  color: var(--ink-secondary);
   border-radius: 5px;
   transition: var(--t);
 }
@@ -200,10 +221,10 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .hero h1 {
   font-size: 52px;
-  font-weight: 900;
-  color: #FFFFFF;
+  font-weight: 800;
+  color: var(--text-primary);
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: -0.03em;
   margin-bottom: 20px;
 }
 
@@ -249,15 +270,17 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 }
 
 .btn-ghost {
-  background: transparent;
-  color: #FFFFFF;
-  border: 2px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-primary);
+  border: 1px solid var(--hairline-white);
+  border-radius: 6px;
 }
 
 .btn-ghost:hover {
-  border-color: var(--yellow);
-  color: var(--yellow);
-  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.14);
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
 
@@ -276,24 +299,26 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 .stat-cell {
   text-align: center;
   padding: 28px 16px;
-  border-right: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid var(--hairline-subtle);
 }
 
 .stat-cell:last-child { border-right: none; }
 
 .stat-num {
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
   color: var(--yellow);
   line-height: 1;
   margin-bottom: 4px;
+  letter-spacing: -0.02em;
 }
 
 .stat-lbl {
   font-size: 12px;
-  color: rgba(255,255,255,0.45);
+  color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   font-weight: 500;
 }
 
@@ -339,7 +364,7 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .section-hd p {
   font-size: 15px;
-  color: var(--gray);
+  color: var(--ink-secondary);
   margin-top: 12px;
 }
 
@@ -349,15 +374,16 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .card {
   background: var(--white);
-  border: 1px solid var(--line);
+  border: none;
   border-radius: 8px;
   padding: 36px 28px;
   transition: all 0.35s var(--ease);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-border);
 }
 
-/* Top gradient accent line — borrowed from ASHSA */
+/* Top gradient accent line */
 .card::before {
   content: '';
   position: absolute;
@@ -370,24 +396,24 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 }
 
 .card:hover {
-  border-color: transparent;
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-lg);
 }
 
 .card:hover::before { transform: scaleX(1); }
 
 .card h4 {
   font-size: 17px;
-  font-weight: 700;
-  color: var(--carbon);
+  font-weight: 600;
+  color: var(--ink);
   margin-bottom: 10px;
+  letter-spacing: -0.01em;
 }
 
 .card p {
   font-size: 14px;
-  color: var(--gray);
-  line-height: 1.8;
+  color: var(--ink-secondary);
+  line-height: 1.7;
 }
 
 /* ====== NEWS ====== */
@@ -395,16 +421,16 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .news-item {
   background: var(--white);
-  border: 1px solid var(--line);
+  border: none;
   border-radius: 8px;
   padding: 28px;
-  transition: var(--t);
+  transition: all 0.3s var(--ease);
+  box-shadow: var(--shadow-border);
 }
 
 .news-item:hover {
-  border-color: var(--yellow);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(240,192,16,0.08);
+  box-shadow: var(--shadow-card-lg);
 }
 
 .news-meta {
@@ -427,16 +453,17 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .news-item h4 {
   font-size: 16px;
-  font-weight: 700;
-  color: var(--carbon);
+  font-weight: 600;
+  color: var(--ink);
   margin-bottom: 8px;
   line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 .news-item p {
   font-size: 14px;
-  color: var(--gray);
-  line-height: 1.8;
+  color: var(--ink-secondary);
+  line-height: 1.7;
 }
 
 /* ====== PAGE BANNER ====== */
@@ -451,13 +478,14 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
   font-size: 36px;
   font-weight: 700;
   font-family: var(--font-display);
+  color: var(--text-primary);
   margin-bottom: 8px;
   letter-spacing: -0.02em;
 }
 
 .page-banner p {
   font-size: 15px;
-  opacity: 0.5;
+  color: var(--text-muted);
 }
 
 /* ====== SKIP LINK — accessibility ====== */
@@ -538,9 +566,10 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .contact-box {
   background: var(--white);
-  border: 1px solid var(--line);
+  border: none;
   border-radius: 8px;
   padding: 36px;
+  box-shadow: var(--shadow-border);
 }
 
 .contact-box h3 {
@@ -570,15 +599,15 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
   display: flex;
   gap: 20px;
   background: var(--white);
-  border: 1px solid var(--line);
+  border: none;
   border-radius: 10px;
   padding: 24px;
-  transition: var(--t);
+  transition: all 0.3s var(--ease);
+  box-shadow: var(--shadow-border);
 }
 
 .leader-card:hover {
-  border-color: var(--yellow);
-  box-shadow: 0 8px 28px rgba(240,192,16,0.10);
+  box-shadow: var(--shadow-card-lg);
   transform: translateY(-2px);
 }
 
@@ -616,9 +645,10 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .leader-info h3 {
   font-size: 18px;
-  font-weight: 700;
-  color: var(--carbon);
+  font-weight: 600;
+  color: var(--ink);
   margin: 4px 0 2px;
+  letter-spacing: -0.01em;
 }
 
 .leader-affil {
@@ -630,7 +660,7 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 
 .leader-bio {
   font-size: 13px;
-  color: var(--gray);
+  color: var(--ink-secondary);
   line-height: 1.85;
 }
 
@@ -653,14 +683,15 @@ nav ul li a.active { color: var(--carbon); font-weight: 700; border-bottom: 2px 
 .partner-grid { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; }
 .partner-item {
   background: var(--white);
-  border: 1px solid var(--line);
+  border: none;
   border-radius: 6px;
   padding: 14px 30px;
   font-size: 14px;
-  color: var(--gray);
-  transition: var(--t);
+  color: var(--ink-secondary);
+  transition: all 0.3s var(--ease);
+  box-shadow: var(--shadow-border);
 }
-.partner-item:hover { border-color:var(--yellow); color:var(--yellow-dk); transform:translateY(-2px); }
+.partner-item:hover { color:var(--yellow-dk); transform:translateY(-2px); box-shadow: var(--shadow-card); }
 
 /* ====== EXTERNAL LINKS ====== */
 .external-links a {
@@ -949,6 +980,9 @@ footer a:hover { color: var(--yellow); }
 footer {
   background: var(--surface-dark);
 }
+
+footer h4 { color: var(--text-primary); }
+footer p, footer li { color: var(--text-muted); }
 
 /* =============================================
    INTERACTIVE — Nav Underline Sliding
