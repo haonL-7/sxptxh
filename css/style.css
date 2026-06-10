@@ -732,32 +732,13 @@ nav ul li a.active::after {
 /* ====== PAGE BANNER ====== */
 .page-banner {
   position: relative;
-  background: var(--slate-800);
+  background:
+    linear-gradient(180deg, rgba(13,13,13,0.5) 0%, rgba(26,30,36,0.75) 100%),
+    url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80') center/cover no-repeat;
   color: #fff;
   text-align: center;
   padding: 80px 32px 72px;
   overflow: hidden;
-}
-
-/* Gradient overlay */
-.page-banner::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 30% 30%, rgba(232,184,48,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 40% at 80% 70%, rgba(232,184,48,0.04) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.page-banner::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(232,184,48,0.15), transparent);
 }
 
 .page-banner h2 {
@@ -767,12 +748,14 @@ nav ul li a.active::after {
   margin-bottom: 10px;
   letter-spacing: -0.02em;
   position: relative;
+  z-index: 1;
 }
 
 .page-banner p {
   font-size: 16px;
   color: var(--text-secondary);
   position: relative;
+  z-index: 1;
   max-width: 500px;
   margin: 0 auto;
 }
