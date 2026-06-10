@@ -624,7 +624,13 @@ nav ul li a.active::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(248,246,242,0.88);
+  background: linear-gradient(180deg,
+    rgba(248,246,242,0.92) 0%,
+    rgba(248,246,242,0.85) 55%,
+    rgba(248,246,242,0.5) 75%,
+    rgba(248,246,242,0.1) 92%,
+    transparent 100%
+  );
   z-index: 0;
 }
 .parallax-bg .container {
