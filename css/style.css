@@ -26,6 +26,7 @@
   --white:         #FFFFFF;
   --bg-warm:       #F8F6F2;
   --bg-warm-2:     #F3F0EA;
+  --bg-body:       #FCFAF7;
   --line-warm:     rgba(0,0,0,0.07);
   --line-warm-2:   rgba(0,0,0,0.04);
 
@@ -96,7 +97,7 @@ html { scroll-behavior:smooth; }
 body {
   font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
   color: var(--ink);
-  background: var(--white);
+  background: var(--bg-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
