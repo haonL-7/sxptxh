@@ -303,6 +303,22 @@ nav ul li a.active::after {
   overflow: hidden;
 }
 
+/* Hero fitness background image */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80') center/cover no-repeat;
+  opacity: 0.25;
+  z-index: 0;
+  filter: grayscale(0.3);
+}
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(26,30,36,0.7) 0%, var(--slate-800) 100%);
+  z-index: 0;
+}
+
 /* Rich mesh gradient background */
 .hero::before {
   content: '';
@@ -662,6 +678,37 @@ nav ul li a.active::after {
 
 .card:hover::after {
   opacity: 1;
+}
+
+/* Card glow border on hover — gold aura */
+.card.glow-hover:hover {
+  box-shadow: var(--shadow-card-hov), 0 0 0 2px rgba(232,184,48,0.3), 0 0 24px rgba(232,184,48,0.12);
+}
+
+/* Button press feedback */
+.btn:active {
+  transform: scale(0.96) !important;
+  transition: transform 0.08s ease !important;
+}
+
+/* Parallax section background */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.parallax-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(248,246,242,0.88);
+  z-index: 0;
+}
+.parallax-bg .container {
+  position: relative;
+  z-index: 1;
 }
 
 .card h4 {
