@@ -256,10 +256,10 @@
         var rect = card.getBoundingClientRect();
         var x = (e.clientX - rect.left) / rect.width - 0.5;
         var y = (e.clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = 'perspective(800px) rotateY(' + (x * 5) + 'deg) rotateX(' + (-y * 5) + 'deg)';
+        card.style.transform = 'perspective(800px) rotateY(' + (x * 5) + 'deg) rotateX(' + (-y * 5) + 'deg) translateY(-4px)';
       });
       card.addEventListener('mouseleave', function () {
-        card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+        card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) translateY(0)';
       });
     });
   }
