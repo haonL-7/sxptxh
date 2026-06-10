@@ -231,7 +231,7 @@
   function initProgressBar() {
     var bar = document.createElement('div');
     bar.id = 'reading-progress';
-    document.body.prepend(bar);
+    document.documentElement.appendChild(bar);
     var ticking = false;
     window.addEventListener('scroll', function () {
       if (!ticking) {
