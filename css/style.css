@@ -491,7 +491,7 @@ nav ul li a.active::after {
 }
 
 .section-bg {
-  background: var(--bg-warm);
+  background: var(--bg-body);
 }
 
 .section-hd {
