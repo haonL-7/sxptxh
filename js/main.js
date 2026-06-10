@@ -184,7 +184,7 @@
     btn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    document.body.appendChild(btn);
+    document.documentElement.appendChild(btn);
 
     let ticking = false;
     window.addEventListener('scroll', function () {
