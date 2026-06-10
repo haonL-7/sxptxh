@@ -1474,3 +1474,76 @@ footer a:hover {
 html {
   scroll-padding-top: 80px;
 }
+
+/* =============================================
+   BREADCRUMB
+   ============================================= */
+.breadcrumb {
+  background: var(--bg-warm);
+  border-bottom: 1px solid var(--line-warm);
+  padding: 12px 0;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+.breadcrumb a { color: var(--ink-secondary); }
+.breadcrumb a:hover { color: var(--gold-warm); }
+.breadcrumb span { color: var(--ink); font-weight: 500; }
+
+/* =============================================
+   BACK TO TOP
+   ============================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--on-primary);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.3s var(--ease);
+  box-shadow: 0 2px 12px rgba(232,184,48,0.35);
+  z-index: 999;
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--gold-warm);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(232,184,48,0.45);
+}
+
+/* =============================================
+   PRINT STYLES
+   ============================================= */
+@media print {
+  .top-bar, header, .breadcrumb, .back-to-top, footer,
+  .hero-actions, .btn, .menu-toggle, .skip-link,
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+  .hero { background: none !important; padding: 20px 0 !important; }
+  .hero h1 { color: #000 !important; font-size: 28px !important; }
+  .hero p { color: #333 !important; }
+  .stats-bar { background: #f0f0f0 !important; }
+  .stat-num { color: #000 !important; }
+  .stat-lbl { color: #555 !important; }
+  body, .section, .section-bg { background: #fff !important; }
+  .card, .news-item, .contact-box, .leader-card {
+    box-shadow: 0 0 0 1px #ccc !important;
+    break-inside: avoid;
+  }
+  a { color: #000 !important; text-decoration: underline; }
+}

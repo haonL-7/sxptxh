@@ -202,8 +202,42 @@
     dividers.forEach((div) => observer.observe(div));
   }
 
+  // ── Back to Top ────────────────────────────
+  function initBackToTop() {
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', '回到顶部');
+    btn.innerHTML = '&#8593;';
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.body.appendChild(btn);
+
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          if (window.scrollY > 500) {
+            btn.classList.add('visible');
+          } else {
+            btn.classList.remove('visible');
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // ── Dynamic Copyright Year ─────────────────
+  function initCopyrightYear() {
+    var el = document.getElementById('copyright-year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
+
   // ── Boot ───────────────────────────────────
   function boot() {
+    initCopyrightYear();
     initScrollReveal();
     initStatsCounter();
     initButtonRipple();
@@ -213,6 +247,7 @@
     initMobileMenuClose();
     initStatEntrance();
     initSectionDividerReveal();
+    initBackToTop();
   }
 
   if (document.readyState === 'loading') {
