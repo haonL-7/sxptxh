@@ -435,10 +435,10 @@ nav ul li a.active::after {
 
 /* ====== STATS BAR ====== */
 .stats-bar {
-  background: var(--slate-900);
+  background: #2E2E2E;
   padding: 0;
   position: relative;
-  border-top: 1px solid rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.04);
 }
 
 .stats-bar .container {
