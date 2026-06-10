@@ -314,6 +314,99 @@
     updateLine();
   }
 
+  // ── 3D Particle Geometry Background ─────────
+  function initParticleBg() {
+    var hero = document.querySelector('.hero');
+    if (!hero) return;
+
+    var canvas = document.createElement('canvas');
+    canvas.id = 'particle-canvas';
+    canvas.style.cssText = 'position:absolute;inset:0;z-index:0;pointer-events:none;';
+    hero.style.position = 'relative';
+    hero.insertBefore(canvas, hero.firstChild);
+
+    var ctx = canvas.getContext('2d');
+    var W, H;
+    var particles = [];
+    var mouse = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 };
+
+    function resize() {
+      W = canvas.width = hero.offsetWidth;
+      H = canvas.height = hero.offsetHeight;
+    }
+
+    function createParticles() {
+      particles = [];
+      var count = Math.floor(W * H / 8000);
+      for (var i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          z: Math.random() * 200 - 100,
+          r: Math.random() * 1.5 + 0.5,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          vz: (Math.random() - 0.5) * 0.2,
+          hue: 38 + Math.random() * 15,
+          alpha: Math.random() * 0.4 + 0.15
+        });
+      }
+    }
+
+    function draw(t) {
+      ctx.clearRect(0, 0, W, H);
+      var cx = W / 2, cy = H / 2;
+
+      particles.forEach(function (p) {
+        // Update position with slight mouse influence
+        p.x += p.vx + (mouse.x - 0.5) * 0.1;
+        p.y += p.vy + (mouse.y - 0.5) * 0.1;
+        p.z += p.vz;
+
+        // Wrap around edges
+        if (p.x < -20) p.x = W + 20;
+        if (p.x > W + 20) p.x = -20;
+        if (p.y < -20) p.y = H + 20;
+        if (p.y > H + 20) p.y = -20;
+        if (p.z < -100) p.z = 100;
+        if (p.z > 100) p.z = -100;
+
+        // Simple perspective
+        var scale = 1 + p.z * 0.005;
+        var sx = p.x * scale + cx * (1 - scale);
+        var sy = p.y * scale + cy * (1 - scale);
+        var alpha = p.alpha * (0.3 + (p.z + 100) / 200 * 0.7);
+
+        ctx.beginPath();
+        ctx.arc(sx, sy, p.r * Math.max(scale, 0.3), 0, Math.PI * 2);
+        ctx.fillStyle = 'hsla(' + p.hue + ', 80%, 65%, ' + alpha + ')';
+        ctx.fill();
+      });
+    }
+
+    function animate() {
+      mouse.x += (mouse.tx - mouse.x) * 0.03;
+      mouse.y += (mouse.ty - mouse.y) * 0.03;
+      draw();
+      requestAnimationFrame(animate);
+    }
+
+    hero.addEventListener('mousemove', function (e) {
+      var rect = hero.getBoundingClientRect();
+      mouse.tx = (e.clientX - rect.left) / W;
+      mouse.ty = (e.clientY - rect.top) / H;
+    });
+
+    window.addEventListener('resize', function () {
+      resize();
+      createParticles();
+    });
+
+    resize();
+    createParticles();
+    animate();
+  }
+
   // ── Page Transition ─────────────────────────
   function initPageTransition() {
     document.body.classList.add('page-entering');
@@ -349,6 +442,7 @@
     initCardTilt();
     initTimelineDraw();
     initPageTransition();
+    initParticleBg();
   }
 
   if (document.readyState === 'loading') {
