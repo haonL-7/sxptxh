@@ -533,7 +533,7 @@ nav ul li a.active::after {
 .stat-plus {
   font-size: 0.5em;
   font-weight: 400;
-  vertical-align: super;
+  vertical-align: sub;
 }
 
 .stat-lbl {
