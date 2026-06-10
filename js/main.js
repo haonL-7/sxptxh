@@ -96,25 +96,6 @@
     });
   }
 
-  // ── Hero Parallax Glow ─────────────────────
-  function initHeroParallax() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-
-    hero.addEventListener('mousemove', function (e) {
-      const rect = hero.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      hero.style.setProperty('--px', (x * 30).toFixed(1) + 'px');
-      hero.style.setProperty('--py', (y * 30).toFixed(1) + 'px');
-    });
-
-    hero.addEventListener('mouseleave', function () {
-      hero.style.setProperty('--px', '0px');
-      hero.style.setProperty('--py', '0px');
-    });
-  }
-
   // ── Nav Scroll Shadow ───────────────────────
   function initNavScrollShadow() {
     const header = document.querySelector('header');
@@ -432,7 +413,6 @@
     initScrollReveal();
     initStatsCounter();
     initButtonRipple();
-    initHeroParallax();
     initNavScrollShadow();
     initSmoothScroll();
     initMobileMenuClose();
