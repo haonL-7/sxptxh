@@ -625,11 +625,12 @@ nav ul li a.active::after {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(248,246,242,0.92) 0%,
-    rgba(248,246,242,0.85) 55%,
-    rgba(248,246,242,0.5) 75%,
-    rgba(248,246,242,0.1) 92%,
-    transparent 100%
+    rgba(248,246,242,0.55) 0%,
+    rgba(248,246,242,0.45) 35%,
+    rgba(248,246,242,0.6) 55%,
+    rgba(248,246,242,0.82) 75%,
+    rgba(248,246,242,0.96) 90%,
+    rgba(248,246,242,1) 100%
   );
   z-index: 0;
 }
