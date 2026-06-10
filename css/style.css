@@ -612,32 +612,7 @@ nav ul li a.active::after {
   transition: transform 0.08s ease !important;
 }
 
-/* Parallax section background */
-.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-.parallax-bg::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,
-    rgba(248,246,242,0.55) 0%,
-    rgba(248,246,242,0.45) 35%,
-    rgba(248,246,242,0.6) 55%,
-    rgba(248,246,242,0.82) 75%,
-    rgba(248,246,242,0.96) 90%,
-    rgba(248,246,242,1) 100%
-  );
-  z-index: 0;
-}
-.parallax-bg .container {
-  position: relative;
-  z-index: 1;
-}
+
 
 .card h4 {
   font-size: 18px;
