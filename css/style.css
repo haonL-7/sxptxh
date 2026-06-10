@@ -991,23 +991,18 @@ nav ul li a.active::after {
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: center;
 }
 .partner-badge:hover {
   background: rgba(255,255,255,0.95);
   border-color: rgba(232,184,48,0.25);
   box-shadow: 0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(232,184,48,0.1);
 }
-.partner-badge .badge-icon {
-  font-size: 22px;
-  flex-shrink: 0;
-}
 .partner-badge .badge-name {
   font-weight: 600;
   color: var(--ink);
   white-space: nowrap;
+  font-size: 14px;
 }
 
 /* ====== EXTERNAL LINKS ====== */
