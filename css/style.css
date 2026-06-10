@@ -298,25 +298,11 @@ nav ul li a.active::after {
 /* ====== HERO — Premium Impact ====== */
 .hero {
   position: relative;
-  background: var(--slate-800);
+  background:
+    linear-gradient(180deg, rgba(26,30,36,0.65) 0%, var(--slate-800) 95%),
+    url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80') center/cover no-repeat;
   padding: 140px 0 120px;
   overflow: hidden;
-}
-
-/* Hero fitness background image */
-.hero-bg-img {
-  position: absolute;
-  inset: 0;
-  background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1400&q=80') center/cover no-repeat;
-  opacity: 0.25;
-  z-index: 0;
-  filter: grayscale(0.3);
-}
-.hero-bg-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(26,30,36,0.7) 0%, var(--slate-800) 100%);
-  z-index: 0;
 }
 
 /* Rich mesh gradient background */
