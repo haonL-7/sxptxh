@@ -1552,3 +1552,122 @@ html {
   }
   a { color: #000 !important; text-decoration: underline; }
 }
+
+/* =============================================
+   READING PROGRESS BAR
+   ============================================= */
+#reading-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-warm));
+  z-index: 10000;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 0 0;
+}
+
+/* =============================================
+   3D CARD TILT
+   ============================================= */
+.card.tilt-enabled,
+.news-item.tilt-enabled,
+.stat-cell.tilt-enabled {
+  transition: transform 0.15s ease-out, box-shadow 0.3s var(--ease);
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+/* =============================================
+   MEMBER LOGO CAROUSEL — pure CSS marquee
+   ============================================= */
+.marquee-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-track {
+  display: flex;
+  gap: 28px;
+  animation: marqueeScroll 30s linear infinite;
+  width: max-content;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-badge {
+  flex-shrink: 0;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 24px 36px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  min-width: 180px;
+  transition: all 0.3s var(--ease);
+}
+.marquee-badge:hover {
+  box-shadow: var(--shadow-card-hov);
+  transform: translateY(-4px);
+}
+.marquee-badge .badge-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.marquee-badge .badge-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.3px;
+}
+.marquee-badge .badge-sub {
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+/* =============================================
+   TIMELINE DRAW ANIMATION
+   ============================================= */
+.timeline-line {
+  position: absolute;
+  left: 12px;
+  top: 4px;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(to bottom, var(--gold), var(--gold-warm));
+  transition: height 0.4s ease-out;
+  z-index: 0;
+}
+.timeline-dot {
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--white);
+  box-shadow: 0 0 0 2px var(--gold);
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.4s var(--ease-spring);
+}
+.timeline-dot.lit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =============================================
+   PAGE TRANSITION — fade-in on load
+   ============================================= */
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+body.page-entering {
+  animation: pageIn 0.4s var(--ease) both;
+}

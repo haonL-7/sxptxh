@@ -227,9 +227,115 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  // ── Reading Progress Bar ───────────────────
+  function initProgressBar() {
+    var bar = document.createElement('div');
+    bar.id = 'reading-progress';
+    document.body.prepend(bar);
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var scrollTop = window.scrollY;
+          var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+          bar.style.width = pct + '%';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // ── 3D Card Tilt ───────────────────────────
+  function initCardTilt() {
+    var cards = document.querySelectorAll('.card, .news-item, .stat-cell');
+    cards.forEach(function (card) {
+      card.classList.add('tilt-enabled');
+      card.addEventListener('mousemove', function (e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'perspective(800px) rotateY(' + (x * 5) + 'deg) rotateX(' + (-y * 5) + 'deg)';
+      });
+      card.addEventListener('mouseleave', function () {
+        card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+      });
+    });
+  }
+
+  // ── Timeline Draw Animation ────────────────
+  function initTimelineDraw() {
+    var timeline = document.querySelector('.timeline');
+    if (!timeline) return;
+
+    // Replace static ::before line with animated element
+    var line = document.createElement('div');
+    line.className = 'timeline-line';
+    timeline.style.position = 'relative';
+    timeline.insertBefore(line, timeline.firstChild);
+
+    var items = timeline.querySelectorAll('.timeline-item');
+    var ticking = false;
+
+    function updateLine() {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var rect = timeline.getBoundingClientRect();
+          var timelineTop = rect.top;
+          var viewH = window.innerHeight;
+          // Start drawing when timeline top enters viewport
+          var progress = Math.max(0, Math.min(1, (viewH - timelineTop) / (viewH + rect.height)));
+          line.style.height = (progress * 100) + '%';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    // Light up dots when they enter viewport
+    var dotObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var dot = entry.target.querySelector('.timeline-dot');
+        if (!dot) {
+          dot = document.createElement('div');
+          dot.className = 'timeline-dot';
+          entry.target.style.position = 'relative';
+          entry.target.appendChild(dot);
+        }
+        if (entry.isIntersecting) {
+          dot.classList.add('lit');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    items.forEach(function (item) { dotObserver.observe(item); });
+    window.addEventListener('scroll', updateLine, { passive: true });
+    updateLine();
+  }
+
+  // ── Page Transition ─────────────────────────
+  function initPageTransition() {
+    document.body.classList.add('page-entering');
+    // Intercept nav clicks for transition feel
+    document.querySelectorAll('nav a, .breadcrumb a').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('http') || href.startsWith('mailto')) return;
+        e.preventDefault();
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.2s ease';
+        setTimeout(function () {
+          window.location.href = href;
+        }, 200);
+      });
+    });
+  }
+
   // ── Boot ───────────────────────────────────
   function boot() {
     initCopyrightYear();
+    initProgressBar();
     initScrollReveal();
     initStatsCounter();
     initButtonRipple();
@@ -240,6 +346,9 @@
     initStatEntrance();
     initSectionDividerReveal();
     initBackToTop();
+    initCardTilt();
+    initTimelineDraw();
+    initPageTransition();
   }
 
   if (document.readyState === 'loading') {
