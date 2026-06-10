@@ -30,15 +30,10 @@
 
   // ── Stats Counter ──────────────────────────
   function initStatsCounter() {
-    const statNums = document.querySelectorAll('.stat-num');
-    if (!statNums.length) return;
+    const statVals = document.querySelectorAll('.stat-val');
+    if (!statVals.length) return;
 
     const animated = new Set();
-
-    function parseTarget(text) {
-      const m = text.match(/^(\d+)\+?$/);
-      return m ? parseInt(m[1], 10) : null;
-    }
 
     function easeOutExpo(t) {
       return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
@@ -53,11 +48,11 @@
         const progress = Math.min(elapsed / duration, 1);
         const eased = easeOutExpo(progress);
         const current = Math.round(target * eased);
-        el.textContent = current + '+';
+        el.textContent = current;
         if (progress < 1) {
           requestAnimationFrame(tick);
         } else {
-          el.textContent = target + '+';
+          el.textContent = target;
         }
       }
 
@@ -69,8 +64,8 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting && !animated.has(entry.target)) {
             animated.add(entry.target);
-            const target = parseTarget(entry.target.textContent.trim());
-            if (target !== null) {
+            const target = parseInt(entry.target.textContent.trim(), 10);
+            if (!isNaN(target)) {
               animate(entry.target, target);
             }
           }
@@ -79,10 +74,7 @@
       { threshold: 0.5 }
     );
 
-    statNums.forEach((el) => {
-      el.dataset.original = el.textContent.trim();
-      observer.observe(el);
-    });
+    statVals.forEach((el) => observer.observe(el));
   }
 
   // ── Button Ripple ──────────────────────────
