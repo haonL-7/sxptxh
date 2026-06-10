@@ -987,40 +987,24 @@ nav ul li a.active::after {
 }
 
 /* ====== PARTNER MARQUEE ====== */
-.partner-track {
-  animation: partnerScroll 40s linear infinite;
-}
-@keyframes partnerScroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 .partner-badge {
   background: rgba(255,255,255,0.7);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(0,0,0,0.04);
-  border-radius: 14px;
-  padding: 20px 28px;
-  min-width: 160px;
   display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
-  transition: all 0.35s var(--ease);
 }
 .partner-badge:hover {
   background: rgba(255,255,255,0.95);
   border-color: rgba(232,184,48,0.25);
   box-shadow: 0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(232,184,48,0.1);
-  transform: translateY(-3px);
 }
 .partner-badge .badge-icon {
   font-size: 22px;
   flex-shrink: 0;
 }
 .partner-badge .badge-name {
-  font-size: 14px;
   font-weight: 600;
   color: var(--ink);
   white-space: nowrap;
